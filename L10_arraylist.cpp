@@ -1,76 +1,51 @@
-#include <iostream>
+/* Given an Array of size N where N = 2M +1, have M numbers twice in it and
+one number is present only once. Find and return the unique element.*/
+#include<iostream>
 using namespace std;
-//you have a array of size n where n is equal to 2m+1. number m exist twice and one number is present only once. find that one number
-// ex; [ 2 4 4 2 6 7] so in this array we need to return ans as 7 as it only occurs once 
-/*
-int  num(int arr[], int size, int query)
-{
-    int  answer;
-    for (int i=0;i<query;i++)
-    {
-        for (int j=0;j<size;j++)
-        {
-            answer=answer^arr[i];
-        }
+
+
+int findUnique(int arr[], int size) {
+    int answer = 0;  // Initialize answer to 0
+    for (int i = 0; i < size; i++) {
+        answer = answer ^ arr[i];  // XOR all elements, duplicate elements cancel out
     }
-    return answer;
+    return answer;  // Return the unique element
 }
-void input(int arr[], int size)
-{
-    for (int i=0;i<size;i++)
-    {
-        cin >> arr[i];
+
+
+void input(int arr[], int size) {
+    
+    for (int i = 0; i < size; i++) {
+        cin >> arr[i];  // Read elements into the array
     }
 }
-int main ()
-{
-    int query;
-    cin >> query;
-    int size;
-    cin >> size;
-    int arr[]={};
-    input(arr,size);
 
-    int found = num(arr, size, query);
-    cout << found;
-
-}*/
-int solution(int arr[],int size , int query)
-{
+int main() {
+    int testcase;
+    cout<<"Enter the number of testcase : ";
+    cin >> testcase;  // Input the number of test cases
     
-    cin >> query;
-    
+    int results[testcase];  // Array to store results for each test case
 
-    int answer=0;
-    for (int j=0;j<query;j++)
-    {
+    // Process each test case
+    for (int t = 0; t < testcase; t++) {
+        int size;
+        cout<<"Enter The Size of [Array-"<<(t+1)<<"] : ";
+        cin >> size;  // Input the size of the array
+        cout<<"Enter The [Array-"<<(t+1)<<"] : ";
         
-    cin >> size ;
-
-
-    for (int i=0; i<size;i++)
-    {
-        cin>> arr[i];
+        int arr[size];  // Declare the array with the given size
+        input(arr, size);  // Input array elements
+        
+        int found = findUnique(arr, size);  // Find the unique element
+        results[t] = found;  // Store the result in the results array
     }
-      
 
-      for (int k=0; k<size; k++)
-      {
-        answer=answer^arr[k];
-      }
-      
+    // Output all results after processing all test cases
+    for (int t = 0; t < testcase; t++) {
+        cout<<"Unique element in [Array-"<<(t+1)<<"] : ";
+        cout << results[t] << endl;  // Print the result for each test case
     }
-return answer;
 
-}
-int main()
-{
-    int arr[]={};
-    int size;
-    int query;
-    int ans=solution(arr,size,query); 
-    cout << ans;
-   
-
-
+    return 0;
 }
