@@ -2,7 +2,7 @@
 using namespace std ;
 int getmax(int num[],int n)
 { 
-    int a= INT_MIN;
+    int a= INT_MIN; //here the int min is predefined in cpp
     for (int i=0;i<n;i++)
     {
         a=max(a,num[i]);
