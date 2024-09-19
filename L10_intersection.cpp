@@ -4,7 +4,7 @@ using namespace std;
 int intersection( int arr[],int brr[], int n, int m)
 {
     int element=0;
-    for (int i=0; i<m;i++ )
+    for (int i=0; i<m;i++ )//loops for comparing
     { 
         for (int j=0;j<m;j++)
         { 
@@ -22,7 +22,7 @@ int intersection( int arr[],int brr[], int n, int m)
 int  main()
 {
     int n;
-    cout << " enter the length of string 1:"<< endl;
+    cout << " enter the length of string 1:"<< endl;// taking input 
     cin>> n;
     
     int arr[100];
