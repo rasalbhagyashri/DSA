@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-//there are two arrays of m and n and we have to find the common values or intersection of both the arrays
+//there are two arrays of m and n and we have to find the common values or intersection of the arrays
 int intersection( int arr[],int brr[], int n, int m)
 {
     int element=0;
