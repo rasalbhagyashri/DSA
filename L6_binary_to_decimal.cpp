@@ -9,7 +9,7 @@
     while (n!=0)
     {
     int digit=n%10;
-    if ( digit ==1)
+    if ( digit ==1) //binary to decimal conversion
     {
         ans=ans+ pow(2,i);
        
